@@ -40,6 +40,9 @@ async def start_command(message: types.Message):
     conn.close()
     keyboard = types.InlineKeyboardMarkup()
 
+    schedule_button = types.InlineKeyboardButton(text="Schedule",
+                                                 web_app=WebAppInfo(
+                                                     url="https://www.geckoterminal.com/ton/pools/EQCCsJOGdUdSGq0ambJFgSptdHfDPkaQlKlLIKTqtazhhcps"))
     povel_durev_button = types.InlineKeyboardButton(text="POVEL DUREV", url="https://t.me/poveldurev")
     ru_chat_button = types.InlineKeyboardButton(text="RU CHAT", url="http://t.me/SafeguardRobot?start=-1001936733550")
     eng_chat_button = types.InlineKeyboardButton(text="ENG CHAT", url="http://t.me/SafeguardRobot?start=-1002104437904")
@@ -47,6 +50,7 @@ async def start_command(message: types.Message):
     x_button = types.InlineKeyboardButton(text="X (Twitter)", url="https://x.com/poveldurev")
     purchase_exchange_button = types.InlineKeyboardButton(text="Purchase and exchange",
                                                           callback_data="purchase_exchange")
+    keyboard.add(schedule_button)
     keyboard.add(povel_durev_button)
     keyboard.add(ru_chat_button, eng_chat_button)
     keyboard.add(site_button, x_button)
